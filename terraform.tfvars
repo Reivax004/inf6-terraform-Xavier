@@ -1,4 +1,4 @@
-project_id   = "mon-projet-gcp"
+project_id   = "zinc-mantra-486909-f9"
 region       = "europe-west4"
 zone         = "europe-west4-a"
 ssh_user     = "student"
