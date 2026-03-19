@@ -4,7 +4,7 @@ resource "google_compute_address" "public_ip" {
 }
 
 resource "google_compute_instance" "vm" {
-  name         = tp"
+  name         = "tp"
   machine_type = var.machine_type
   zone         = var.zone
 
