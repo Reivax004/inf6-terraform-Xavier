@@ -1,5 +1,5 @@
 resource "google_compute_address" "public_ip" {
-  name     = "tp"
+  name     = "tp-ip"
   region   = var.region
 }
 
