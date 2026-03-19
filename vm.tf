@@ -1,16 +1,14 @@
 resource "google_compute_address" "public_ip" {
-  for_each = local.roles
-  name     = "${local.name_prefix}-ip-${each.key}"
+  name     = "${local.tp}-ip-${each.key}"
   region   = var.region
 }
 
 resource "google_compute_instance" "vm" {
-  for_each     = local.roles
-  name         = "${local.name_prefix}-${each.key}"
+  name         = "${local.tp}-${each.key}"
   machine_type = var.machine_type
   zone         = var.zone
 
-  tags = ["tp-ssh", "tp-${each.key}"]
+  tags = ["tp-ssh"]
 
   boot_disk {
     initialize_params {
