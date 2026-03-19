@@ -1,17 +1,17 @@
 resource "google_compute_network" "vpc" {
-  name = "${local.tp}-vpc"
+  name = "tp-vpc"
   auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "subnet" {
-  name          = "${local.tp}-subnet"
+  name          = "tp-subnet"
   region        = var.region
   ip_cidr_range = "10.10.0.0/24"
   network       = google_compute_network.vpc.id
 }
 
 resource "google_compute_firewall" "allow_ssh" {
-  name    = "${local.tp}-ssh"
+  name    = "tp-ssh"
   network = google_compute_network.vpc.name
 
   allow {
